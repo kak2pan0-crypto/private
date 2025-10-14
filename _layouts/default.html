@@ -225,20 +225,26 @@
       </ul>
     </nav>
 
-    <!-- ====== Второе меню GIS ====== -->
-    <nav class="top-nav" style="margin-top: 5px; background-color: #2a2a2a; padding: 6px 0; border-radius: 6px;">
-      <ul>
-        <li><a href="{{ '/gis/index.md' | relative_url }}">📘 Содержание GIS</a></li>
-        <li><a href="{{ '/gis/efros' | relative_url }}">🧠 Efros</a></li>
-        <li><a href="{{ '/gis/datapk-itm' | relative_url }}">💾 DatAPK-ITM</a></li>
-        <li><a href="{{ '/gis/datapk-pak' | relative_url }}">💾 DatAPK-ПАК</a></li>
-        <li><a href="{{ '/gis/antivirus' | relative_url }}">🛡️ Antivirus</a></li>
-        <li><a href="{{ '/gis/hardware' | relative_url }}">⚙️ Hardware</a></li>
-        <li><a href="{{ '/gis/software' | relative_url }}">🧩 Software</a></li>
-        <li><a href="{{ '/gis/useful' | relative_url }}">🧰 Полезное</a></li>
-        <li><a href="{{ '/gis/scripts' | relative_url }}">💡 Скрипты</a></li>
-      </ul>
-    </nav>
+  <!-- ====== Второе меню GIS ====== -->
+<nav class="top-nav" style="margin-top: 5px; background-color: #2a2a2a; padding: 6px 0; border-radius: 6px;">
+  <ul>
+    {% for item in site.data.gis_nav %}
+      <li>
+        {% if item.children %}
+          <span>{{ item.name }}</span>
+          <ul class="dropdown">
+            {% for child in item.children %}
+              <li><a href="{{ child.link | relative_url }}">{{ child.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
   </header>
 
   <main id="content" class="main-content" role="main">
