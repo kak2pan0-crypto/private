@@ -30,19 +30,21 @@
         margin: 0;
       }
 
+      /* ================ Двухстрочное меню ================= */
+      .top-nav {
+        margin-top: 10px;
+      }
       .top-nav ul {
         list-style: none;
         padding: 0;
         margin: 0;
         text-align: center;
       }
-
       .top-nav ul li {
         display: inline-block;
         position: relative;
         margin: 0 10px;
       }
-
       .top-nav ul li a,
       .top-nav ul li span {
         text-decoration: none;
@@ -53,7 +55,6 @@
         border-radius: 6px;
         transition: all 0.3s ease;
       }
-
       .top-nav ul li:hover > a,
       .top-nav ul li:hover > span {
         background: rgba(255,255,255,0.1);
@@ -72,63 +73,22 @@
         text-align: left;
         box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       }
-
       .top-nav ul li:hover ul.dropdown {
         display: block;
       }
-
       .top-nav ul li ul.dropdown li {
         display: block;
         margin: 0;
       }
-
       .top-nav ul li ul.dropdown li a {
         display: block;
         padding: 10px 14px;
         color: #ffffff;
         transition: all 0.3s ease;
       }
-
       .top-nav ul li ul.dropdown li a:hover {
         background: rgba(255,255,255,0.1);
         box-shadow: inset 0 0 8px rgba(102,204,255,0.6);
-      }
-
-      /* Вторая панель меню (Инструкции GIS) */
-      .gis-nav-wrapper {
-        background-color: #262626;
-        border-top: 1px solid #444;
-        border-bottom: 1px solid #333;
-        padding: 10px 0;
-        margin-top: 8px;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: all 0.8s ease;
-      }
-
-      .gis-nav-wrapper.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .gis-nav-title {
-        text-align: center;
-        color: #ccc;
-        font-size: 0.95em;
-        margin-bottom: 6px;
-        letter-spacing: 0.5px;
-      }
-
-      .gis-nav ul li a,
-      .gis-nav ul li span {
-        background-color: #262626;
-        transition: all 0.3s ease;
-      }
-
-      .gis-nav ul li:hover > a,
-      .gis-nav ul li:hover > span {
-        color: #66ccff;
-        text-shadow: 0 0 6px rgba(102,204,255,0.8);
       }
 
       .main-content {
@@ -139,7 +99,6 @@
         color: #66ccff;
         transition: all 0.3s ease;
       }
-
       a:hover {
         color: #99ddff;
         text-shadow: 0 0 8px #66ccff;
@@ -164,7 +123,10 @@
         overflow-x: auto;
       }
 
-      .token.option { color: #66ccff !important; font-weight: bold; }
+      .token.option {
+        color: #66ccff !important;
+        font-weight: bold;
+      }
       .token.comment { color: #888888 !important; }
       .token.keyword { color: #ffffff !important; }
       .token.string { color: #99ff99 !important; }
@@ -172,37 +134,67 @@
       .token.number { color: #ff9999 !important; }
       .token.function { color: #ffffff !important; }
 
-      /* Две колонки */
-      .two-columns { column-count: 2; column-gap: 40px; }
-      .two-columns h3 { break-inside: avoid; }
-      .two-columns ol, .two-columns ul { padding-left: 20px; }
-
-      /* Адаптивность */
+      /* ================= Две колонки ================= */
+      .two-columns {
+        column-count: 2;
+        column-gap: 40px;
+        margin-top: 20px;
+      }
       @media (max-width: 900px) {
-        .two-columns { column-count: 1; }
+        .two-columns {
+          column-count: 1;
+        }
       }
 
-      /* Кнопка "Наверх" */
-      #backToTop {
-        display: none;
+      /* ================= Карточки разделов ================= */
+      .two-columns h3 {
+        background-color: #333;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: #ffffff;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        font-size: 1.1em;
+      }
+
+      .two-columns ol {
+        background-color: #2a2a2a;
+        padding: 12px 16px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        list-style-position: inside;
+      }
+
+      .two-columns ol li a {
+        color: #66ccff;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .two-columns ol li a:hover {
+        color: #99ddff;
+        text-shadow: 0 0 6px #66ccff;
+      }
+
+      /* ================= Кнопка наверх ================= */
+      #scrollToTopBtn {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        z-index: 99;
+        z-index: 1000;
+        background-color: #1f1f1f;
+        color: #66ccff;
         border: none;
-        outline: none;
-        background-color: #66ccff;
-        color: #fff;
-        cursor: pointer;
-        padding: 12px 16px;
         border-radius: 50%;
-        font-size: 18px;
+        padding: 12px 16px;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.5);
         transition: all 0.3s ease;
       }
-
-      #backToTop:hover {
-        background-color: #99ddff;
-        box-shadow: 0 0 10px #66ccff;
+      #scrollToTopBtn:hover {
+        background-color: #333;
+        color: #99ddff;
       }
     </style>
   </head>
@@ -215,31 +207,30 @@
       <p id="last-update" style="color:#ccc; font-size:0.9em;">Загрузка даты обновления...</p>
 
       <script>
-        fetch("https://api.github.com/repos/soulpastwk/linux-help/commits?path=index.md&page=1&per_page=1")
-          .then(response => response.json())
-          .then(data => {
-            if (data && data.length > 0) {
-              const commitDate = new Date(data[0].commit.author.date);
-              const formattedDate = commitDate.toLocaleString("ru-RU", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-                hour: "2-digit",
-                minute: "2-digit"
-              }).replace(',', ' в');
-              document.getElementById("last-update").textContent =
-                `Материал сайта обновлён: ${formattedDate}`;
-            } else {
-              document.getElementById("last-update").textContent = "Дата обновления недоступна";
-            }
-          })
-          .catch(err => {
-            document.getElementById("last-update").textContent = "Ошибка получения даты обновления";
-            console.error(err);
-          });
+      fetch("https://api.github.com/repos/soulpastwk/linux-help/commits?path=index.md&page=1&per_page=1")
+        .then(response => response.json())
+        .then(data => {
+          if (data && data.length > 0) {
+            const commitDate = new Date(data[0].commit.author.date);
+            const formattedDate = commitDate.toLocaleString("ru-RU", {
+              day: "2-digit",
+              month: "2-digit",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit"
+            }).replace(',', ' в');
+            document.getElementById("last-update").textContent =
+              `Материал сайта обновлён: ${formattedDate}`;
+          } else {
+            document.getElementById("last-update").textContent = "Дата обновления недоступна";
+          }
+        })
+        .catch(err => {
+          document.getElementById("last-update").textContent = "Ошибка получения даты обновления";
+          console.error(err);
+        });
       </script>
 
-      <!-- Первая панель: Основы Linux -->
       <nav class="top-nav">
         <ul>
           {% for item in site.nav %}
@@ -258,29 +249,6 @@
           {% endfor %}
         </ul>
       </nav>
-
-      <!-- Вторая панель: Инструкции GIS -->
-      <div class="gis-nav-wrapper" id="gisMenu">
-        <div class="gis-nav-title">🧭 Инструкции GIS</div>
-        <nav class="top-nav gis-nav">
-          <ul>
-            {% for item in site.nav_gis %}
-              <li>
-                {% if item.children %}
-                  <span>{{ item.name }}</span>
-                  <ul class="dropdown">
-                    {% for child in item.children %}
-                      <li><a href="{{ child.link | relative_url }}">{{ child.name }}</a></li>
-                    {% endfor %}
-                  </ul>
-                {% else %}
-                  <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
-      </div>
     </header>
 
     <main id="content" class="main-content" role="main">
@@ -293,29 +261,13 @@
       </footer>
     </main>
 
-    <!-- Кнопка "Наверх" -->
-    <button onclick="scrollToTop()" id="backToTop" title="Наверх">⬆</button>
-
+    <!-- ================= Кнопка наверх ================= -->
+    <button id="scrollToTopBtn" title="Наверх">⬆</button>
     <script>
-      // Появление GIS меню
-      window.addEventListener('DOMContentLoaded', () => {
-        const gisMenu = document.getElementById('gisMenu');
-        setTimeout(() => gisMenu.classList.add('visible'), 300);
-      });
-
-      // Кнопка Наверх
-      const backToTopButton = document.getElementById("backToTop");
-      window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-          backToTopButton.style.display = "block";
-        } else {
-          backToTopButton.style.display = "none";
-        }
-      };
-
-      function scrollToTop() {
+      const btn = document.getElementById("scrollToTopBtn");
+      btn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
