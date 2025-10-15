@@ -88,7 +88,11 @@ sudo astra-nochmodx-lock disable
 ![0](https://raw.githubusercontent.com/kak2pan0-crypto/private/main/gis/images/cibvueia5i003.jpg)
 
 
-## 🐳 Настройка Докера - отредактировать параметры в nano `/lib/systemd/system/docker.service`
+## 🐳 Настройка Докера - отредактировать параметры в 
+
+```bash
+nano /lib/systemd/system/docker.service
+```
 
 Заменить существующую строку, строкой ниже:
 
