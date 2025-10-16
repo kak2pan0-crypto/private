@@ -32,7 +32,7 @@
    yum install --disablerepo=base,updates,kernels6 *.rpm --skip-broken
    ```
 
-## 🐳 Установка Docker
+## 🐳 Настройка Docker
 
 ```bash
 mv /usr/bin/docker-compose /usr/local/bin/
