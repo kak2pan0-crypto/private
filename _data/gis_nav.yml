@@ -35,8 +35,6 @@
   children:
     - name: "Примечания и заметки"
       link: "/gis/note_datapk_pak"
-    - name: "Создание бэкапа DatAPK через консоль"
-      link: "/gis/bkp_datapk_console"
     - name: "Установка RedOS и настройка для DatAPK 1.18"
       link: "/gis/inst_redos_prep_datapk118"
     - name: "Установка DatAPK 1.18 в настроенной ОС RedOS 7.3"
