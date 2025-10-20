@@ -42,8 +42,6 @@
 
 - name: "🛡️ Antivirus"
   children:
-    - name: "Примечания и заметки"
-      link: "/gis/note_antivirus"
     - name: "Установка KICS"
       link: "/gis/inst_kics"
     - name: "Как скачать обновления с офиц. сайта"
@@ -65,8 +63,6 @@
 
 - name: "⚙️ Hardware"
   children:
-    - name: "Примечания и заметки"
-      link: "/gis/note_hardware"
     - name: "Проверка диска SMART (в Linux)"
       link: "/gis/check_smart"
     - name: "Настройка ИБП"
@@ -75,15 +71,11 @@
       link: "/gis/vipnet_prime_disk"
     - name: "Собираем RAID на AVAGO MegaRAID SAS 9460-16i"
       link: "/gis/raid_megaraid_9460"
-    - name: "Как переключить NUMA BIOS на обычный"
-      link: "/gis/bios_numa_off"
     - name: "Разметка диска вручную в Astra Linux"
       link: "/gis/disk_manual_astra"
 
 - name: "🧩 Software"
   children:
-    - name: "Примечания и заметки"
-      link: "/gis/note_software"
     - name: "Установка CyberBackup (на Astra Linux)"
       link: "/gis/inst_cyberbackup_astra"
     - name: "Создание лицензий продуктов GIS для макетирования"
@@ -95,8 +87,6 @@
 
 - name: "🧰 Полезное"
   children:
-    - name: "Примечания и заметки"
-      link: "/gis/note_useful"
     - name: "Создание статичных названий сетевых интерфейсов (Astra)"
       link: "/gis/cfg_netnames_astra"
     - name: "Скачать пакет rpm/deb без установки"
@@ -114,8 +104,6 @@
 
 - name: "💡 Скрипты"
   children:
-    - name: "Примечания и заметки"
-      link: "/gis/note_scripts"
     - name: "Как повысить эффективность скриптов (MobaXterm)"
       link: "/gis/mobaxterm_scripts"
     - name: "Описание файлов настроек безопасности PAM"
