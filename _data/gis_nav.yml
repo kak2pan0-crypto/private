@@ -87,8 +87,6 @@
 
 - name: "🧰 Полезное"
   children:
-    - name: "Создание статичных названий сетевых интерфейсов (Astra)"
-      link: "/gis/cfg_netnames_astra"
     - name: "Скачать пакет rpm/deb без установки"
       link: "/gis/pkg_download_rpm_deb"
     - name: "Установка EVE-NG на виртуалку"
@@ -97,10 +95,6 @@
       link: "/gis/cfg_eve-ng_mysetup"
     - name: "Zvirt — установка Windows на стенде"
       link: "/gis/inst_zvirt_win"
-    - name: "Полезные команды"
-      link: "/gis/useful_cmds"
-    - name: "Настройка NTP"
-      link: "/gis/cfg_ntp_gis"
 
 - name: "💡 Скрипты"
   children:
